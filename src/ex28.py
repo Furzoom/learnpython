@@ -1,0 +1,23 @@
+def p(a):
+    print a
+
+p(True and True)
+p(False and True)
+p(1 == 1 and 2 == 1)
+p("test" == "test")
+p(1 == 1 or 2 != 1)
+p(True and 1 == 1)
+p(False and 0 != 0)
+p(True and 1 == 1)
+p("test" == "testing")
+p(1 != 0 and 2 == 1)
+p("test" != "testing")
+p("test" == 1)
+p(not (True and False))
+p(not (1 == 1 and 0 != 1))
+p(not (10 == 1 or 1000 == 1000))
+p(not (1 != 10 or 3 == 4))
+p(not ("testing" == "testing" and "Zed" == "Coll Guy"))
+p(1 == 1 and not ("testing" == 1 or 1 == 0))
+p("chunck" == "bacon" and not (3 == 4 or 3 == 3))
+p(3 == 3 and not ("testing" == "testing" or "Python" == "Fun"))
