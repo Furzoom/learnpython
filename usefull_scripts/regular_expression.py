@@ -138,6 +138,83 @@ def test():
     p(r, t)
 
 
+def test1():
+    # re.compile(pattern, flags=0)
+    # 返回Match对象
+    # flags:
+    #    re.A
+    #    re.ASCII
+    #        \w \W \b \B \s \S \d \D仅匹配ASCII，而不匹配Unicode
+    #    re.DEBUG
+    #        编译正则表达式时显示调试信息
+    #    re.I
+    #    re.IGNORECASE
+    #        忽略大小写
+    #    re.M
+    #    re.MULTILINE
+    #        多行模式，改变^和$的行为
+    #    re.S
+    #    re.DOTALL
+    #        .任意匹配模式，改变.的行为
+    #    re.L
+    #    re.LOCALE
+    #        \w \W \b \B \s \S取决于当前区域设置
+    #    re.U
+    #    re.UNICODE
+    #        在Python3.x中，为保先前后兼容而保留
+    #    re.X
+    #    re.VERBOSE
+    #        详细模式。
+    #
+    #
+
+    # 将正则表达式编译成Pattern对象
+    pattern = re.compile(r'(\w+) (\w+)(?P<sign>.*)')
+    # 使用Pattern匹配文本，将返回结果，无匹配时返回None
+    match = pattern.match('hello world!')
+
+    '''
+    Match对象
+        group([group1, ...])
+            获得一个或多个分组匹配的字符串，指定多个参数时将返回元组；group1可以
+            使用编号，也可以使用别名。0代表整个匹配子串。
+        groups(default=None)
+            以元组形式返回全部匹配的分组，分组没有匹配时返回default，默认None。
+        groupdict(default=None)
+            返回别名匹配的字典。没有匹配时返回default，默认为None。
+        start([group])
+        end([group])
+            返回指定分组匹配的子串在字符串中的起始(子串第一个字符)/结束(子串最
+            后一个字符+1)索引。
+        span([group])
+            返回(start(group), end(group))
+        expand(template)
+    '''
+    if match:
+        # 传递给match和search的文本字符串
+        print('match.string:', match.string)
+        # 产生该对象的正则表达式对象
+        print('match.re:', match.re)
+        # 搜索字符串的开始索引
+        print('match.pos:', match.pos)
+        # 搜索字符串的结束索引
+        print('match.endpos:', match.endpos)
+        # 最后一个被捕获的分组在文本中的索引
+        print('match.lastindex:', match.lastindex)
+        # 最后一个被捕获的分组的别名
+        print('match.lastgroup:', match.lastgroup)
+
+        print('match.group(1,2):', match.group(1, 2))
+        print('match.groups():', match.groups())
+        print('match.groupdict():', match.groupdict())
+        print('match.start(2):', match.start(2))
+        print('match.end(2):', match.end(2))
+        print('match.span(2):', match.span(2))
+        print(r'match.expand(r"\2 \1\3"):', match.expand(r'\2 \1\3'))
+    else:
+        print('Not matched')
 
 if __name__ == '__main__':
-    test()
+    #test()
+    test1()
+
