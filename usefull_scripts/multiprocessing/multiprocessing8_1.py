@@ -10,7 +10,7 @@ def write_proc(q):
             q.put(i, block=False)
         except Exception, e:
             print e
-            pass
+
         time.sleep(1)
 
 
@@ -20,7 +20,7 @@ def read_proc1(q):
             print("proc1: {0}".format(q.get()))
         except Exception, e:
             print e
-            pass
+        time.sleep(0.3)
 
 def read_proc2(q):
     while True:
@@ -28,7 +28,8 @@ def read_proc2(q):
             print("proc2: {0}".format(q.get()))
         except Exception, e:
             print e
-            pass
+
+        time.sleep(0.5)
 
 if __name__ == "__main__":
     q = multiprocessing.Queue()
