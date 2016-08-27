@@ -2,8 +2,7 @@
 # -*- coding: utf-8 -*-
 
 '''
- .
-    any character except a newline
+ .  any character except a newline
  ^
     the start of the string
  $
@@ -14,7 +13,7 @@
     match 1 or more repetitions
  ?
     match 0 or 1 repetitions
- *? +? ??
+ *? +? ?? {}?
     match in non-greedy fashion
  {m}
     match m repetitions

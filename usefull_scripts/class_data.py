@@ -28,7 +28,7 @@ if __name__ == '__main__':
     for klass in (Inheritor, Replacer, Extender):
         print('\n' + klass.__name__ + '...')
         klass().method()
-        print('\nProvider...')
-        x = Provider()
-        x.delegate()
+    print('\nProvider...')
+    x = Provider()
+    x.delegate()
 
