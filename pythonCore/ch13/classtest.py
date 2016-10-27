@@ -2,34 +2,35 @@
 # -*- coding: utf-8 -*-
 
 
-class C:
+class C(object):
     version = '1.1'
 
     def __init__(self):
-        print self
-        print dir(self)
+        print(self)
+        print(dir(self))
 
 
 class C1(C):
     def __init__(self):
-        print 'initialized'
+        C.__init__(self)
+        print('initialized')
 
     def __del__(self):
-        #C.__del__(self)
-        print 'deleted'
+        # C.__del__(self)
+        print('deleted')
 
 
 class TestStaticMethod:
     @staticmethod
     def foo():
-        print 'calling static method foo()'
+        print('calling static method foo()')
 
 
 class TestClassMethod:
     @classmethod
     def foo(cls):
-        print 'calling class method foo()'
-        print 'foo() is part of class:', cls.__name__
+        print('calling class method foo()')
+        print('foo() is part of class:', cls.__name__)
 
 
 def test1():
@@ -40,7 +41,7 @@ def test2():
     c1 = C1()
     c2 = c1
     c3 = c1
-    print hex(id(c1)), hex(id(c2)), hex(id(c3))
+    print(hex(id(c1)), hex(id(c2)), hex(id(c3)))
     del c1
     del c2
     del c3
@@ -65,16 +66,16 @@ class SortedKeyDict(dict):
 
 def test5():
     d = SortedKeyDict((('zheng-cai', 67), ('hui-jun', 68), ('xin-yi', 2)))
-    print 'By iterator:'.ljust(12), [key for key in d]
-    print 'By keys():'.ljust(12), d.keys()
+    print('By iterator:'.ljust(12), [key for key in d])
+    print('By keys():'.ljust(12), d.keys())
 
 
 def main():
     #test1()
-    #test2()
+    test2()
     #test3()
     #test4()
-    test5()
+    # test5()
 
 
 if __name__ == '__main__':
