@@ -15,3 +15,9 @@ if __name__ == '__main__':
     print(Foo.__dict__)
     print(Foo.__module__)
     print(Foo.__class__)
+    print('-' * 30)
+    f = Foo()
+    print(f.__dict__)
+    print(f.__class__)
+    for x in dir(f):
+        print(x)
