@@ -22,7 +22,7 @@
 
 # v0.3
 while True:
-    reply = input("Enter text:")
+    reply = raw_input("Enter text:")
     if reply == 'stop':
         break
     try:
