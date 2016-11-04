@@ -74,7 +74,7 @@ if __name__ == "__main__":
 
     x = Selfless(2)
     print(x.normal(3, 4))
-    print(Selfless.selfless(3, 4))
+    # print(Selfless.selfless(3, 4))
 
     x, y, z = Number(2), Number(3), Number(4)
     print(x.double())
