@@ -5,19 +5,19 @@
 import socket
 import sys
 
+
 BUFSIZE = 1024
+
+udpCliSock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
 
 def start_client(address):
-    tcpCliSock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    tcpCliSock.connect(address)
-
     while True:
         data = raw_input('> ')
         if not data:
             break
-        tcpCliSock.send(data)
-        data = tcpCliSock.recv(BUFSIZE)
+        udpCliSock.sendto(data, address)
+        data, addr = udpCliSock.recvfrom(BUFSIZE)
         if not data:
             break
         print(data)

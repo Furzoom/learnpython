@@ -24,7 +24,7 @@ while True:
         data = tcpClient.recv(BUFSIZE)
         if not data:
             break
-        tcpClient.send('[{}] {}'.format(bytes(time.ctime(), 'utf-8'), data))
+        tcpClient.send('[{}] {}'.format(time.ctime(), data))
     tcpClient.close()
 
 # tcpSerSock.close()
